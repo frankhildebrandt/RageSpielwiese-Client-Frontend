@@ -27,13 +27,13 @@ export default function LoginView() {
     }, []);
 
     function registerClick() {
-        console.log("Login Clicked ", state.username, " ", state.password);
         mp.events.callRemote("registerUserAccount", state.username, state.password);
+        console.log("Login Clicked ", state.username, " ", state.password);
     }
 
     function loginClick() {
-        console.log("Login Clicked ", state.username, " ", state.password);
         mp.events.callRemote("loginUserAccount", state.username, state.password);
+        console.log("Login Clicked ", state.username, " ", state.password);
     }
 
     return (
