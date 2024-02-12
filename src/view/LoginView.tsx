@@ -13,27 +13,14 @@ export default function LoginView() {
         password: ""
     });
 
-    useEffect(() => {
-        const listener = (event :any) => {
-            if (event.code === "Enter" || event.code === "NumpadEnter") {
-                event.preventDefault();
-                loginClick();
-            }
-        };
-        document.addEventListener("keydown", listener);
-        return () => {
-            document.removeEventListener("keydown", listener);
-        };
-    }, []);
-
     function registerClick() {
         // @ts-ignore
-        mp.trigger("registerUserAccount", state.username, state.password);
+        mp.trigger("client:registerData", state.username, state.password);
     }
 
     function loginClick() {
         // @ts-ignore
-        mp.trigger("loginUserAccount", state.username, state.password);
+        mp.trigger("client:loginData", state.username, state.password);
     }
 
     return (
