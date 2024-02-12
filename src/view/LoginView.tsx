@@ -27,10 +27,12 @@ export default function LoginView() {
     }, []);
 
     function registerClick() {
+        // @ts-ignore
         mp.trigger("registerUserAccount", state.username, state.password);
     }
 
     function loginClick() {
+        // @ts-ignore
         mp.trigger("loginUserAccount", state.username, state.password);
     }
 
